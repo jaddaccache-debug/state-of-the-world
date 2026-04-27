@@ -1,0 +1,108 @@
+{
+  "ontology": [
+    {
+      "word": "PRECARIOUS",
+      "definition": "Dangerously lacking in security or stability.",
+      "polarity": -0.7,
+      "trigger": { "conflict_gt": 70, "markets_lt": 45, "news_lt": 40 },
+      "related": ["VOLATILE", "FRAGILE", "TURBULENT"],
+      "opposite": ["STABLE", "SECURE", "RESILIENT"]
+    },
+    {
+      "word": "VOLATILE",
+      "definition": "Liable to change rapidly and unpredictably, especially for the worse.",
+      "polarity": -0.6,
+      "trigger": { "markets_gt": 65, "news_lt": 45 },
+      "related": ["TURBULENT", "ERRATIC", "PRECARIOUS"],
+      "opposite": ["STABLE", "CALM", "STEADY"]
+    },
+    {
+      "word": "TURBULENT",
+      "definition": "Characterized by conflict, disorder, or confusion.",
+      "polarity": -0.65,
+      "trigger": { "conflict_gt": 60, "trends_lt": 40, "news_lt": 45 },
+      "related": ["VOLATILE", "CHAOTIC", "UNSTABLE"],
+      "opposite": ["CALM", "PEACEFUL", "ORDERED"]
+    },
+    {
+      "word": "FRAGILE",
+      "definition": "Susceptible to breakdown or damage under stress.",
+      "polarity": -0.55,
+      "trigger": { "markets_lt": 40, "conflict_gt": 50, "news_lt": 50 },
+      "related": ["PRECARIOUS", "VULNERABLE", "TENUOUS"],
+      "opposite": ["RESILIENT", "ROBUST", "STRONG"]
+    },
+    {
+      "word": "ANXIOUS",
+      "definition": "Characterized by widespread unease and apprehension.",
+      "polarity": -0.5,
+      "trigger": { "trends_lt": 35, "news_lt": 45, "markets_lt": 50 },
+      "related": ["UNEASY", "TENSE", "APPREHENSIVE"],
+      "opposite": ["CALM", "HOPEFUL", "CONFIDENT"]
+    },
+    {
+      "word": "TENSE",
+      "definition": "A state of latent hostility or opposition between parties.",
+      "polarity": -0.4,
+      "trigger": { "conflict_gt": 55, "news_lt": 50 },
+      "related": ["ANXIOUS", "STRAINED", "UNEASY"],
+      "opposite": ["RELAXED", "COOPERATIVE", "CALM"]
+    },
+    {
+      "word": "UNCERTAIN",
+      "definition": "Not able to be relied upon; not known or definite.",
+      "polarity": -0.3,
+      "trigger": { "markets_lt": 50, "trends_lt": 50 },
+      "related": ["AMBIGUOUS", "UNCLEAR", "UNSETTLED"],
+      "opposite": ["CERTAIN", "CLEAR", "DEFINED"]
+    },
+    {
+      "word": "NEUTRAL",
+      "definition": "Not aligned with or supporting any side; balanced.",
+      "polarity": 0.0,
+      "trigger": { "all_between": [45, 55] },
+      "related": ["BALANCED", "EVEN", "MODERATE"],
+      "opposite": ["VOLATILE", "STABLE"]
+    },
+    {
+      "word": "CAUTIOUS",
+      "definition": "Careful to avoid potential problems or dangers.",
+      "polarity": 0.1,
+      "trigger": { "news_between": [45, 60], "markets_between": [45, 60] },
+      "related": ["CAREFUL", "MEASURED", "WATCHFUL"],
+      "opposite": ["RECKLESS", "BOLD", "CONFIDENT"]
+    },
+    {
+      "word": "HOPEFUL",
+      "definition": "Feeling or inspiring optimism about a future event.",
+      "polarity": 0.5,
+      "trigger": { "news_gt": 60, "markets_gt": 55, "conflict_lt": 40 },
+      "related": ["OPTIMISTIC", "ENCOURAGED", "POSITIVE"],
+      "opposite": ["ANXIOUS", "PESSIMISTIC", "FEARFUL"]
+    },
+    {
+      "word": "RESILIENT",
+      "definition": "Recovering quickly from difficulties; showing toughness.",
+      "polarity": 0.6,
+      "trigger": { "news_gt": 60, "markets_gt": 60, "conflict_lt": 45 },
+      "related": ["STRONG", "RECOVERING", "ADAPTIVE"],
+      "opposite": ["FRAGILE", "VULNERABLE", "WEAK"]
+    },
+    {
+      "word": "STABLE",
+      "definition": "Not likely to give way or change; firmly established.",
+      "polarity": 0.65,
+      "trigger": { "all_gt": 55, "conflict_lt": 40 },
+      "related": ["SECURE", "STEADY", "GROUNDED"],
+      "opposite": ["VOLATILE", "PRECARIOUS", "TURBULENT"]
+    },
+    {
+      "word": "THRIVING",
+      "definition": "Prospering and growing vigorously.",
+      "polarity": 0.85,
+      "trigger": { "all_gt": 65, "conflict_lt": 30 },
+      "related": ["PROSPEROUS", "FLOURISHING", "VIBRANT"],
+      "opposite": ["DECLINING", "STRUGGLING", "FRAGILE"]
+    }
+  ]
+}

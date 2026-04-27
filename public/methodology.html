@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Methodology — State of the World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#070810;--glass:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--accent:#6c63ff;--red:#ff6584;--text:#e8eaf6;--muted:#6b7280;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;--display:'Bebas Neue',cursive}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
+    .bg-grid{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(108,99,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+    .bg-glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(108,99,255,0.14) 0%,transparent 70%)}
+    .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:28px 0 20px;border-bottom:1px solid var(--border)}
+    .logo{font-family:var(--display);font-size:1.4rem;letter-spacing:.12em;color:var(--text);text-decoration:none}.logo span{color:var(--accent)}
+    nav a{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-decoration:none;margin-left:20px;transition:color .2s}
+    nav a:hover,nav a.on{color:var(--text)}
+    .hero{padding:60px 0 50px;text-align:center}
+    .lbl{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+    h1{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);letter-spacing:.06em;background:linear-gradient(135deg,#fff,rgba(108,99,255,.9));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px}
+    .sub{font-size:1rem;color:rgba(232,234,246,.6);line-height:1.7;max-width:600px;margin:0 auto}
+    section{margin-bottom:52px}
+    .sec-lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+    .sec-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+    .card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:24px}
+    .card+.card{margin-top:12px}
+    /* Pipeline */
+    .step{display:flex;gap:0;margin-bottom:4px}
+    .sn{width:38px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);border-radius:10px 0 0 10px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.72rem;color:var(--accent);flex-shrink:0}
+    .sb{flex:1;background:var(--glass);border:1px solid var(--border);border-left:none;border-radius:0 10px 10px 0;padding:12px 16px}
+    .sbn{font-size:.82rem;font-weight:600;margin-bottom:3px}
+    .sbd{font-size:.76rem;color:var(--muted);line-height:1.5}
+    /* Table */
+    table{width:100%;border-collapse:collapse;font-size:.8rem}
+    th{text-align:left;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border)}
+    td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(232,234,246,.75);line-height:1.5;vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    .tag{display:inline-block;padding:2px 8px;border-radius:100px;font-family:var(--mono);font-size:.58rem;background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.2)}
+    /* Weights */
+    .wrow{margin-bottom:16px}
+    .whead{display:flex;justify-content:space-between;margin-bottom:6px;font-size:.83rem}
+    .wbar-bg{height:5px;border-radius:3px;background:rgba(255,255,255,.06)}
+    .wbar{height:100%;border-radius:3px}
+    /* AI */
+    .airow{display:flex;gap:10px;margin-bottom:8px;font-size:.84rem;line-height:1.5}
+    .ok{color:#4ade80;flex-shrink:0}.no{color:var(--red);flex-shrink:0}
+    .disc{background:rgba(255,101,132,.06);border:1px solid rgba(255,101,132,.2);border-radius:12px;padding:18px 22px;font-size:.82rem;line-height:1.7;color:rgba(232,234,246,.65);margin-bottom:48px}
+    .disc strong{color:var(--red)}
+    footer{border-top:1px solid var(--border);padding:26px 0;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.63rem;color:var(--muted)}
+    footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--text)}
+  </style>
+</head>
+<body>
+<div class="bg-grid"></div><div class="bg-glow"></div>
+<div class="wrap">
+  <header>
+    <a href="index.html" class="logo">STATE<span>.</span>WORLD</a>
+    <nav><a href="index.html">Today</a><a href="history.html">History</a><a href="methodology.html" class="on">Methodology</a></nav>
+  </header>
+
+  <div class="hero">
+    <div class="lbl">Full Transparency</div>
+    <h1>METHODOLOGY</h1>
+    <p class="sub">Every data source, formula, and decision that produces today's word. Nothing hidden. Nothing invented.</p>
+  </div>
+
+  <section>
+    <div class="sec-lbl">Data Pipeline</div>
+    <div class="step"><div class="sn">L1</div><div class="sb"><div class="sbn">Ingestion</div><div class="sbd">Python cron fetches raw JSON/RSS from 5 free sources every 6 hours. Raw values stored with timestamps in Supabase.</div></div></div>
+    <div class="step"><div class="sn">L2</div><div class="sb"><div class="sbn">Normalization</div><div class="sbd">Each category converts heterogeneous data into a 0–100 Index Score. 50 = neutral baseline.</div></div></div>
+    <div class="step"><div class="sn">L3</div><div class="sb"><div class="sbn">Weighted Synthesis</div><div class="sbd">Category scores combined with fixed weights. Conflict (28%) carries the highest weight as the most acute human impact signal.</div></div></div>
+    <div class="step"><div class="sn">L4</div><div class="sb"><div class="sbn">Ontology Mapping</div><div class="sbd">Composite scores matched against a curated dictionary of World State Words using deterministic trigger conditions.</div></div></div>
+    <div class="step"><div class="sn">L5</div><div class="sb"><div class="sbn">AI Explanation</div><div class="sbd">The word + top-3 drivers passed as JSON to a free-tier LLM. Produces exactly one sentence. No internet access, no invention.</div></div></div>
+  </section>
+
+  <section>
+    <div class="sec-lbl">Data Sources</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Category</th><th>Source</th><th>Update</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>News Sentiment</td><td>GDELT Project — 100+ language global news graph</td><td>15 min</td><td><span class="tag">Free</span></td></tr>
+          <tr><td>Conflict & Disasters</td><td>GDACS (UN/EU) — severity-rated alert RSS feed</td><td>Real-time</td><td><span class="tag">Free</span></td></tr>
+          <tr><td>Financial Markets</td><td>Yahoo Finance (yfinance) — VIX, S&P 500, Nikkei, Gold</td><td>Daily close</td><td><span class="tag">Free</span></td></tr>
+          <tr><td>Climate / Weather</td><td>Open-Meteo — global city weather codes</td><td>Hourly</td><td><span class="tag">Free</span></td></tr>
+          <tr><td>Search Trends</td><td>Google Trends (pytrends) — global anxiety keyword interest</td><td>Daily</td><td><span class="tag">Free</span></td></tr>
+          <tr><td>AI Synthesis</td><td>Groq Llama 3 / Gemini Flash — 1-sentence JSON summarizer</td><td>Once daily</td><td><span class="tag">Free tier</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-lbl">Category Weights</div>
+    <div class="card">
+      <div class="wrow"><div class="whead"><span>Conflict & Crises</span><span style="color:#ff6584;font-family:var(--mono);font-size:.72rem">28%</span></div><div class="wbar-bg"><div class="wbar" style="width:28%;background:linear-gradient(90deg,#ff6584,#f97316)"></div></div></div>
+      <div class="wrow"><div class="whead"><span>Financial Markets</span><span style="color:#fbbf24;font-family:var(--mono);font-size:.72rem">23%</span></div><div class="wbar-bg"><div class="wbar" style="width:23%;background:linear-gradient(90deg,#fbbf24,#f59e0b)"></div></div></div>
+      <div class="wrow"><div class="whead"><span>News Sentiment</span><span style="color:#a78bfa;font-family:var(--mono);font-size:.72rem">22%</span></div><div class="wbar-bg"><div class="wbar" style="width:22%;background:linear-gradient(90deg,#6c63ff,#a78bfa)"></div></div></div>
+      <div class="wrow"><div class="whead"><span>Search Trends</span><span style="color:#60a5fa;font-family:var(--mono);font-size:.72rem">15%</span></div><div class="wbar-bg"><div class="wbar" style="width:15%;background:linear-gradient(90deg,#3b82f6,#60a5fa)"></div></div></div>
+      <div class="wrow" style="margin-bottom:0"><div class="whead"><span>Climate / Weather</span><span style="color:#4ade80;font-family:var(--mono);font-size:.72rem">12%</span></div><div class="wbar-bg"><div class="wbar" style="width:12%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-lbl">AI Boundaries</div>
+    <div class="card">
+      <div class="airow"><span class="ok">✓</span><span>Summarize the word given a structured JSON object of scores and top drivers</span></div>
+      <div class="airow"><span class="ok">✓</span><span>Produce exactly one sentence in plain English, under 25 words</span></div>
+      <div class="airow"><span class="no">✗</span><span>Access the internet, browse news, or invent events</span></div>
+      <div class="airow"><span class="no">✗</span><span>Choose the word — selection is done by deterministic code only</span></div>
+      <div class="airow" style="margin-bottom:0"><span class="no">✗</span><span>Modify or override any data scores — it receives read-only JSON</span></div>
+    </div>
+  </section>
+
+  <div class="disc"><strong>Disclaimer:</strong> State of the World is a data synthesis engine. It is not financial advice, political commentary, or a substitute for expert analysis. All outputs must be interpreted in the context of this methodology.</div>
+
+  <footer>
+    <span>STATE.WORLD · Methodology v0.1</span>
+    <span><a href="index.html">← Back to Today</a> &nbsp;·&nbsp; <a href="history.html">History</a></span>
+  </footer>
+</div>
+</body>
+</html>

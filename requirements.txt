@@ -1,0 +1,8 @@
+yfinance
+pandas
+requests
+python-dotenv
+pytrends
+openmeteo-requests
+requests-cache
+retry-requests
