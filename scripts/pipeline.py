@@ -91,6 +91,13 @@ def run_full_pipeline():
     }
     supabase_upsert("daily_states", record)
 
+    # ── STEP 6: Predict Tomorrow (MiroFish) ───────────
+    try:
+        from predict_future import run_prediction
+        run_prediction(record)
+    except ImportError:
+        print("\n[6/6] Skipping prediction (predict_future.py not found).")
+
     print(f"\n{'='*40}")
     print(f"  ✅ DONE: '{word}' saved for {today}")
     print(f"{'='*40}\n")

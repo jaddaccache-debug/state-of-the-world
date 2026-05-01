@@ -5,13 +5,12 @@ import pandas as pd
 def collect_search_trends():
     print(f"[{datetime.now()}] Collecting global search trend signals...")
     
-    # Initialize pytrends with a global focus
-    pytrends = TrendReq(hl='en-US', tz=360)
-    
     # High-level global themes to gauge "temperature"
     keywords = ["recession", "war", "climate change", "inflation", "happiness"]
     
     try:
+        # Initialize pytrends with a global focus
+        pytrends = TrendReq(hl='en-US', tz=360)
         pytrends.build_payload(keywords, cat=0, timeframe='now 1-d', geo='', gprop='')
         data = pytrends.interest_over_time()
         

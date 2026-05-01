@@ -19,3 +19,27 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+.main-temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.h1-temp {
+  font-family: serif;
+  font-size: 6rem;
+  background: linear-gradient(135deg, #fff, rgba(108,99,255,.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.p-temp {
+  color: rgba(232,234,246,.6);
+  max-width: 540px;
+  text-align: center;
+  line-height: 1.7;
+}

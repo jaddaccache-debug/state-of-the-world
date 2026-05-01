@@ -48,6 +48,17 @@
     .disc strong{color:var(--red)}
     footer{border-top:1px solid var(--border);padding:26px 0;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.63rem;color:var(--muted)}
     footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--text)}
+    .w-color-1{color:#ff6584;font-family:var(--mono);font-size:.72rem}
+    .w-bar-1{width:28%;background:linear-gradient(90deg,#ff6584,#f97316)}
+    .w-color-2{color:#fbbf24;font-family:var(--mono);font-size:.72rem}
+    .w-bar-2{width:23%;background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+    .w-color-3{color:#a78bfa;font-family:var(--mono);font-size:.72rem}
+    .w-bar-3{width:22%;background:linear-gradient(90deg,#6c63ff,#a78bfa)}
+    .w-color-4{color:#60a5fa;font-family:var(--mono);font-size:.72rem}
+    .w-bar-4{width:15%;background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+    .w-color-5{color:#4ade80;font-family:var(--mono);font-size:.72rem}
+    .w-bar-5{width:12%;background:linear-gradient(90deg,#22c55e,#4ade80)}
+    .mb-0{margin-bottom:0}
   </style>
 </head>
 <body>
@@ -93,11 +104,11 @@
   <section>
     <div class="sec-lbl">Category Weights</div>
     <div class="card">
-      <div class="wrow"><div class="whead"><span>Conflict & Crises</span><span style="color:#ff6584;font-family:var(--mono);font-size:.72rem">28%</span></div><div class="wbar-bg"><div class="wbar" style="width:28%;background:linear-gradient(90deg,#ff6584,#f97316)"></div></div></div>
-      <div class="wrow"><div class="whead"><span>Financial Markets</span><span style="color:#fbbf24;font-family:var(--mono);font-size:.72rem">23%</span></div><div class="wbar-bg"><div class="wbar" style="width:23%;background:linear-gradient(90deg,#fbbf24,#f59e0b)"></div></div></div>
-      <div class="wrow"><div class="whead"><span>News Sentiment</span><span style="color:#a78bfa;font-family:var(--mono);font-size:.72rem">22%</span></div><div class="wbar-bg"><div class="wbar" style="width:22%;background:linear-gradient(90deg,#6c63ff,#a78bfa)"></div></div></div>
-      <div class="wrow"><div class="whead"><span>Search Trends</span><span style="color:#60a5fa;font-family:var(--mono);font-size:.72rem">15%</span></div><div class="wbar-bg"><div class="wbar" style="width:15%;background:linear-gradient(90deg,#3b82f6,#60a5fa)"></div></div></div>
-      <div class="wrow" style="margin-bottom:0"><div class="whead"><span>Climate / Weather</span><span style="color:#4ade80;font-family:var(--mono);font-size:.72rem">12%</span></div><div class="wbar-bg"><div class="wbar" style="width:12%;background:linear-gradient(90deg,#22c55e,#4ade80)"></div></div></div>
+      <div class="wrow"><div class="whead"><span>Conflict & Crises</span><span class="w-color-1">28%</span></div><div class="wbar-bg"><div class="wbar w-bar-1"></div></div></div>
+      <div class="wrow"><div class="whead"><span>Financial Markets</span><span class="w-color-2">23%</span></div><div class="wbar-bg"><div class="wbar w-bar-2"></div></div></div>
+      <div class="wrow"><div class="whead"><span>News Sentiment</span><span class="w-color-3">22%</span></div><div class="wbar-bg"><div class="wbar w-bar-3"></div></div></div>
+      <div class="wrow"><div class="whead"><span>Search Trends</span><span class="w-color-4">15%</span></div><div class="wbar-bg"><div class="wbar w-bar-4"></div></div></div>
+      <div class="wrow mb-0"><div class="whead"><span>Climate / Weather</span><span class="w-color-5">12%</span></div><div class="wbar-bg"><div class="wbar w-bar-5"></div></div></div>
     </div>
   </section>
 
@@ -108,7 +119,7 @@
       <div class="airow"><span class="ok">✓</span><span>Produce exactly one sentence in plain English, under 25 words</span></div>
       <div class="airow"><span class="no">✗</span><span>Access the internet, browse news, or invent events</span></div>
       <div class="airow"><span class="no">✗</span><span>Choose the word — selection is done by deterministic code only</span></div>
-      <div class="airow" style="margin-bottom:0"><span class="no">✗</span><span>Modify or override any data scores — it receives read-only JSON</span></div>
+      <div class="airow mb-0"><span class="no">✗</span><span>Modify or override any data scores — it receives read-only JSON</span></div>
     </div>
   </section>
 

@@ -302,8 +302,8 @@
       </div>
       <div class="pred-cell">
         <div class="pred-label">Tomorrow · Predicted</div>
-        <div class="pred-word">TURBULENT</div>
-        <div class="pred-score score-orange">Confidence 72%</div>
+        <div class="pred-word" id="tomorrowWord">TURBULENT</div>
+        <div class="pred-score score-orange" id="tomorrowSub">Confidence 72%</div>
       </div>
     </div>
   </section>
@@ -445,6 +445,23 @@
         });
       }
       console.log(`✓ Live data loaded: ${data.word} (${today})`);
+
+      // Load prediction for tomorrow
+      const { data: predData } = await client
+        .from('predictions')
+        .select('*')
+        .eq('date', today)
+        .single();
+        
+      if (predData && predData.predicted_word) {
+        const wordEl = document.getElementById('tomorrowWord');
+        const subEl = document.getElementById('tomorrowSub');
+        if (wordEl) wordEl.textContent = predData.predicted_word;
+        if (subEl) {
+          subEl.textContent = predData.simulation_summary ? 'Simulation Complete' : 'Forecast Active';
+          subEl.className = 'pred-score score-purple';
+        }
+      }
     } catch(e) {
       console.log('Live data unavailable — demo mode active.', e);
     }
