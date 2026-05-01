@@ -26,7 +26,7 @@ python3 synthesizer.py
 
 ## Project Structure
 
-```
+```text
 stateoftheworld/
 ├── index.html              # Main dashboard (Today's Word)
 ├── history.html            # Calendar + timeline of past words
@@ -53,7 +53,7 @@ stateoftheworld/
 ## Tech Stack (100% Free Tier)
 
 | Layer | Tool | Cost |
-|---|---|---|
+| --- | --- | --- |
 | Frontend | Vanilla HTML/CSS/JS | Free |
 | Hosting | Vercel | Free |
 | Database | Supabase (PostgreSQL) | Free |
@@ -104,6 +104,6 @@ vercel deploy
 
 ## Get Your Free Keys
 
-- **Groq** (AI synthesis): https://console.groq.com
+- **Groq** (AI synthesis): <https://console.groq.com>
 - **Supabase** (database): Already provisioned ✓
 - All data sources (GDELT, GDACS, yfinance, Open-Meteo, pytrends): No key needed ✓
